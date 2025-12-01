@@ -7,17 +7,9 @@ class Day1 : Day(1) {
         var countsOfZeroes = 0;
         inputList.forEach {
             val rotation = it.substring(1).toInt()
-            if (it.startsWith("R")) {
-                position += rotation;
-            } else {
-                position -= rotation;
-            }
-            while (position < 0) {
-                position += 100;
-            }
-            while (position >= 100) {
-                position -= 100;
-            }
+            val direction = if (it[0] == 'R')  1 else -1;
+            position += rotation * direction
+            position %= 100
             if (position == 0) { countsOfZeroes++ }
         }
         return countsOfZeroes;
@@ -40,7 +32,6 @@ class Day1 : Day(1) {
             while (position >= 100) {
                 position -= 100;
             }
-
             //println("Position: $position , clicks = $countsOfZeroes")
         }
         return countsOfZeroes;
