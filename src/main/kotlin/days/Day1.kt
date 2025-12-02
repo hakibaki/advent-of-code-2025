@@ -17,24 +17,22 @@ class Day1 : Day(1) {
 
     override fun partTwo(): Any {
         var position = 50;
-        var countsOfZeroes = 0;
+        var clicks = 0;
         inputList.forEach {
             //print("Rotation: $it , ")
             var rotation = it.substring(1).toInt()
             if (it.startsWith("L")) {
                 rotation = -rotation;
             }
-            countsOfZeroes += countClicks(position, rotation)
+            clicks += countClicks(position, rotation)
             position += rotation;
-            while (position < 0) {
+            position %= 100
+            if (position < 0) {
                 position += 100;
-            }
-            while (position >= 100) {
-                position -= 100;
             }
             //println("Position: $position , clicks = $countsOfZeroes")
         }
-        return countsOfZeroes;
+        return clicks;
     }
 
     fun countClicks(startPosition: Int, rotation: Int): Int {
