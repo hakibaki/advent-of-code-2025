@@ -42,7 +42,7 @@ class Day3 : Day(3)
         joltageNumber += findMaxNumberInString(batteriesPack.dropLast(numberOfBatteriesToTake - 1)).toString()
         val remainingPack = batteriesPack.substringAfter(joltageNumber)
         joltageNumber += calculateMaxJoltage(remainingPack, numberOfBatteriesToTake - 1)
-        println("joltageNumber: $joltageNumber")
+        //println("joltageNumber: $joltageNumber")
         return joltageNumber
     }
 }

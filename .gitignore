@@ -6,3 +6,9 @@ out/
 # Gradle
 .gradle
 build/
+/src/main/resources/input_day_1.txt
+/src/main/resources/input_day_2.txt
+/src/main/resources/input_day_3.txt
+/src/test/resources/input_day_1.txt
+/src/test/resources/input_day_2.txt
+/src/test/resources/input_day_3.txt
