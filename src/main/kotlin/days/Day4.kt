@@ -2,10 +2,6 @@ package days
 
 class Day4 : Day(4) {
     override fun partOne(): Any {
-        //load input as two-dimensional array of characters, remove empty lines
-        //for each row nad for each column check if there is a '@' character
-        //if yes, then check all adjacent cells (including diagonals) for '@' characters
-        //if there are fewer than 4 adjacent '@' characters, count this '@' character
         val grid = inputList.map { it.toCharArray() }
         return countRemovableRolls(grid).count();
     }
@@ -26,7 +22,7 @@ class Day4 : Day(4) {
 }
 
 private fun countRemovableRolls(grid: List<CharArray>): List<Pair<Int, Int>> {
-    var removableRollsPositions = mutableListOf<Pair<Int, Int>>();
+    val removableRollsPositions = mutableListOf<Pair<Int, Int>>();
     for (i in grid.indices) {
         for (j in grid[i].indices) {
             if (grid[i][j] == '@') {
